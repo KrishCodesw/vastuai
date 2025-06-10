@@ -1,0 +1,38 @@
+[
+  
+  {
+    "rule_id": "IV_RM_KITCHEN_NE_001",
+    "name": "Kitchen in Northeast Corner (Vastu Defect)",
+    "description": "...",
+    "system": "Indian Vastu",
+    "category": "Room Placement",
+    "target_entity": "Room",
+    "target_type": "kitchen",
+    "conditions": [
+      { "fact": "room.room_type", "operator": "equals", "value": "kitchen" },
+      { "fact": "room.room_center_direction", "operator": "equals", "value": "Northeast" }
+    ],
+    "consequence": { "type": "defect", "severity": "high", "message": "...", "short_message": "..." },
+    "remedy": { "type": "general", "description": "..." },
+    "compatibility": { "indian_vastu_score": 1, "feng_shui_score": 0 },
+    "source_reference": "Agni Purana, Mayamatam"
+  },
+  {
+    "rule_id": "IV_OBJ_STOVE_EAST_003",
+    "name": "Stove Facing East (Favorable)",
+    "description": "...",
+    "system": "Indian Vastu",
+    "category": "Object Placement",
+    "target_entity": "Object",
+    "target_type": "stove",
+    "conditions": [
+      { "fact": "room.room_type", "operator": "equals", "value": "kitchen" },
+      { "fact": "object.object_type", "operator": "equals", "value": "stove" },
+      { "fact": "object.facing_direction", "operator": "equals", "value": "East" }
+    ],
+    "consequence": { "type": "favorable", "severity": "medium", "message": "...", "short_message": "..." },
+    "remedy": { "type": "none", "description": "..." },
+    "compatibility": { "indian_vastu_score": 1, "feng_shui_score": 0 },
+    "source_reference": "Vastu principles for kitchen"
+  }
+]

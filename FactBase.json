@@ -1,0 +1,137 @@
+{
+  "property_id": "user_scan_12345",
+  "scan_timestamp": "2025-06-10T18:30:13Z",
+  "global_north_direction_azimuth": 0.0,
+  "rooms": [
+    {
+      "room_id": "room_001",
+      "room_type": "kitchen",
+      "room_name": "Main Kitchen",
+      "room_boundaries": {
+        "min_x": 0.0,
+        "min_y": 0.0,
+        "min_z": 0.0,
+        "max_x": 5.0,
+        "max_y": 4.0,
+        "max_z": 3.0
+      },
+      "room_center_direction": "Northeast",
+      "objects": [
+        {
+          "object_id": "obj_kitchen_stove_001",
+          "object_type": "stove",
+          "position": {
+            "x": 1.5,
+            "y": 2.0,
+            "z": 0.8
+          },
+          "facing_direction": "East",
+          "size": {
+            "length": 0.9,
+            "width": 0.6,
+            "height": 0.9
+          },
+          "color": "silver",
+          "material": "stainless_steel",
+          "ar_labels": [
+            "appliance",
+            "cooking_station"
+          ],
+          "metadata": {
+            "is_fire_element": true,
+            "is_water_element": false
+          }
+        },
+        {
+          "object_id": "obj_kitchen_sink_001",
+          "object_type": "sink",
+          "position": {
+            "x": 0.5,
+            "y": 3.5,
+            "z": 0.8
+          },
+          "facing_direction": "N/A",
+          "size": {
+            "length": 0.7,
+            "width": 0.5,
+            "height": 0.2
+          },
+          "color": "white",
+          "material": "ceramic",
+          "ar_labels": [
+            "plumbing",
+            "water_source"
+          ],
+          "metadata": {
+            "is_fire_element": false,
+            "is_water_element": true
+          }
+        }
+      ]
+    },
+    {
+      "room_id": "room_002",
+      "room_type": "master_bedroom",
+      "room_name": "Master Bedroom",
+      "room_boundaries": {
+        "min_x": 0.0,
+        "min_y": 4.5,
+        "min_z": 0.0,
+        "max_x": 6.0,
+        "max_y": 8.0,
+        "max_z": 3.0
+      },
+      "room_center_direction": "Southwest",
+      "objects": [
+        {
+          "object_id": "obj_mbedroom_bed_001",
+          "object_type": "bed",
+          "position": {
+            "x": 3.0,
+            "y": 6.0,
+            "z": 0.4
+          },
+          "facing_direction": "South",
+          "size": {
+            "length": 2.1,
+            "width": 1.8,
+            "height": 0.6
+          },
+          "color": "brown",
+          "material": "wood",
+          "ar_labels": [
+            "furniture",
+            "sleeping"
+          ],
+          "metadata": {
+            "is_heavy_furniture": true
+          }
+        },
+        {
+          "object_id": "obj_mbedroom_mirror_001",
+          "object_type": "mirror",
+          "position": {
+            "x": 5.8,
+            "y": 5.5,
+            "z": 1.2
+          },
+          "facing_direction": "East",
+          "size": {
+            "length": 0.8,
+            "width": 0.05,
+            "height": 1.5
+          },
+          "color": "silver",
+          "material": "glass",
+          "ar_labels": [
+            "decorative",
+            "reflection"
+          ],
+          "metadata": {
+            "is_reflective": true
+          }
+        }
+      ]
+    }
+  ]
+}

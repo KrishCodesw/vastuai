@@ -1,0 +1,43 @@
+
+
+[
+
+  {
+    "rule_id": "FS_RM_FIRE_WATER_CONFLICT_001",
+    "name": "Fire Element (Stove) in Water/Earth Sector (Conflict)",
+    "description": "...",
+    "system": "Chinese Feng Shui",
+    "category": "Elemental Balance",
+    "target_entity": "Object",
+    "target_type": "stove",
+    "conditions": [
+      { "fact": "room.room_type", "operator": "equals", "value": "kitchen" },
+      { "fact": "object.object_type", "operator": "equals", "value": "stove" },
+      { "fact": "room.room_center_direction", "operator": "equals", "value": "Northeast" },
+      { "fact": "object.metadata.is_fire_element", "operator": "equals", "value": true }
+    ],
+    "consequence": { "type": "warning", "severity": "medium", "message": "...", "short_message": "..." },
+    "remedy": { "type": "general", "description": "..." },
+    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "source_reference": "Feng Shui Bagua and Five Elements"
+  },
+  {
+    "rule_id": "FS_OBJ_MIRROR_FACING_BED_002",
+    "name": "Mirror Facing Bed in Bedroom (Defect)",
+    "description": "...",
+    "system": "Chinese Feng Shui",
+    "category": "Object Placement",
+    "target_entity": "Object",
+    "target_type": "mirror",
+    "conditions": [
+      { "fact": "room.room_type", "operator": "equals", "value": "master_bedroom" },
+      { "fact": "object.object_type", "operator": "equals", "value": "mirror" },
+      { "fact": "object_reflects_bed", "operator": "equals", "value": true } 
+    ],
+    "consequence": { "type": "defect", "severity": "high", "message": "...", "short_message": "..." },
+    "remedy": { "type": "general", "description": "..." },
+    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "source_reference": "Feng Shui principles for bedroom"
+  }
+
+]
