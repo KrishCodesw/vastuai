@@ -1,26 +1,103 @@
 [
-  
   {
-    "rule_id": "IV_RM_KITCHEN_NE_001",
-    "name": "Kitchen in Northeast Corner (Vastu Defect)",
-    "description": "...",
+    "rule_id": "IV_RM_KITCHEN_SE_002",
+    "name": "Kitchen in Southeast (Favorable)",
+    "description": "Southeast is governed by Agni (fire), making it the ideal place for the kitchen, enhancing health and well-being.",
     "system": "Indian Vastu",
     "category": "Room Placement",
     "target_entity": "Room",
     "target_type": "kitchen",
     "conditions": [
       { "fact": "room.room_type", "operator": "equals", "value": "kitchen" },
-      { "fact": "room.room_center_direction", "operator": "equals", "value": "Northeast" }
+      { "fact": "room.room_center_direction", "operator": "equals", "value": "Southeast" }
     ],
-    "consequence": { "type": "defect", "severity": "high", "message": "...", "short_message": "..." },
-    "remedy": { "type": "general", "description": "..." },
-    "compatibility": { "indian_vastu_score": 1, "feng_shui_score": 0 },
-    "source_reference": "Agni Purana, Mayamatam"
+    "consequence": {
+      "type": "favorable",
+      "severity": "high",
+      "message": "Kitchen in Southeast enhances digestive fire and health.",
+      "short_message": "Excellent kitchen placement"
+    },
+    "remedy": { "type": "none", "description": "No remedy required." },
+    "compatibility": { "indian_vastu_score": 1, "feng_shui_score": 1 },
+    "source_reference": "Mayamatam, Vastu Vidya"
   },
   {
-    "rule_id": "IV_OBJ_STOVE_EAST_003",
-    "name": "Stove Facing East (Favorable)",
-    "description": "...",
+    "rule_id": "IV_RM_KITCHEN_NW_003",
+    "name": "Kitchen in Northwest (Moderately Favorable)",
+    "description": "A kitchen in the Northwest is acceptable, particularly when Southeast is unavailable, but it may lead to inconsistent food habits.",
+    "system": "Indian Vastu",
+    "category": "Room Placement",
+    "target_entity": "Room",
+    "target_type": "kitchen",
+    "conditions": [
+      { "fact": "room.room_type", "operator": "equals", "value": "kitchen" },
+      { "fact": "room.room_center_direction", "operator": "equals", "value": "Northwest" }
+    ],
+    "consequence": {
+      "type": "neutral",
+      "severity": "medium",
+      "message": "Kitchen in Northwest is permissible but may cause instability in domestic routines.",
+      "short_message": "Manageable with care"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Use light yellow or white tones; maintain kitchen hygiene strictly."
+    },
+    "compatibility": { "indian_vastu_score": 0.7, "feng_shui_score": 0.5 },
+    "source_reference": "Agni Purana, Manasara"
+  },
+  {
+    "rule_id": "IV_RM_MBR_SW_004",
+    "name": "Master Bedroom in Southwest (Favorable)",
+    "description": "The southwest direction signifies strength and stability, making it ideal for the master bedroom to ensure authority and harmony.",
+    "system": "Indian Vastu",
+    "category": "Room Placement",
+    "target_entity": "Room",
+    "target_type": "master_bedroom",
+    "conditions": [
+      { "fact": "room.room_type", "operator": "equals", "value": "master_bedroom" },
+      { "fact": "room.room_center_direction", "operator": "equals", "value": "Southwest" }
+    ],
+    "consequence": {
+      "type": "favorable",
+      "severity": "high",
+      "message": "Master bedroom in the Southwest provides authority and stability in relationships.",
+      "short_message": "Strong and favorable placement"
+    },
+    "remedy": { "type": "none", "description": "No remedy needed." },
+    "compatibility": { "indian_vastu_score": 1, "feng_shui_score": 1 },
+    "source_reference": "Samarangana Sutradhara, Vastu Vidya"
+  },
+  {
+    "rule_id": "IV_RM_MBR_NE_005",
+    "name": "Master Bedroom in Northeast (Vastu Defect)",
+    "description": "The northeast is a zone of purity and spirituality, unsuitable for heavy functions like the master bedroom, which may disturb mental peace and cause instability.",
+    "system": "Indian Vastu",
+    "category": "Room Placement",
+    "target_entity": "Room",
+    "target_type": "master_bedroom",
+    "conditions": [
+      { "fact": "room.room_type", "operator": "equals", "value": "master_bedroom" },
+      { "fact": "room.room_center_direction", "operator": "equals", "value": "Northeast" }
+    ],
+    "consequence": {
+      "type": "defect",
+      "severity": "high",
+      "message": "Master bedroom in the Northeast may lead to stress and weak decision-making.",
+      "short_message": "Donate white cloth and grains"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Use pastel colors and place a Vastu pyramid in the room’s southwest corner."
+    },
+    "compatibility": { "indian_vastu_score": 0.2, "feng_shui_score": 0 },
+    "source_reference": "Mayamatam, Manasara"
+  },
+  
+  {
+    "rule_id": "IV_OBJ_STOVE_SOUTH_017",
+    "name": "Stove Facing South (Vastu Defect)",
+    "description": "Cooking while facing south is inauspicious in Vastu, as it may lead to increased anger and health issues.",
     "system": "Indian Vastu",
     "category": "Object Placement",
     "target_entity": "Object",
@@ -28,11 +105,283 @@
     "conditions": [
       { "fact": "room.room_type", "operator": "equals", "value": "kitchen" },
       { "fact": "object.object_type", "operator": "equals", "value": "stove" },
+      { "fact": "object.facing_direction", "operator": "equals", "value": "South" }
+    ],
+    "consequence": {
+      "type": "defect",
+      "severity": "medium",
+      "message": "Cooking while facing south may increase stress and aggression in the household.",
+      "short_message": "Change stove to face East"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Shift stove orientation to East if possible. Place lemon and copper vessel nearby."
+    },
+    "compatibility": { "indian_vastu_score": 0.3, "feng_shui_score": 0 },
+    "source_reference": "Mayamatam, Agni Purana"
+  },
+  {
+    "rule_id": "IV_OBJ_MIRROR_NORTH_018",
+    "name": "Mirror on North Wall (Favorable)",
+    "description": "Mirrors on the north wall enhance financial energies as North is ruled by Kuber, the god of wealth.",
+    "system": "Indian Vastu",
+    "category": "Object Placement",
+    "target_entity": "Object",
+    "target_type": "mirror",
+    "conditions": [
+      { "fact": "object.object_type", "operator": "equals", "value": "mirror" },
+      { "fact": "object.wall_direction", "operator": "equals", "value": "North" }
+    ],
+    "consequence": {
+      "type": "favorable",
+      "severity": "high",
+      "message": "Mirror on north wall promotes prosperity and good energy flow.",
+      "short_message": "Boosts abundance"
+    },
+    "remedy": { "type": "none", "description": "No remedy needed." },
+    "compatibility": { "indian_vastu_score": 1, "feng_shui_score": 0.9 },
+    "source_reference": "Manasara, Mayamatam"
+  },
+  {
+    "rule_id": "IV_ENT_EAST_032",
+    "name": "Entrance Facing East (Highly Favorable)",
+    "description": "East is the direction of the rising sun and Surya, symbolizing energy, vitality, and new opportunities. An entrance here brings growth and fame.",
+    "system": "Indian Vastu",
+    "category": "Room Placement",
+    "target_entity": "Room",
+    "target_type": "entrance",
+    "conditions": [
+      { "fact": "room.room_type", "operator": "equals", "value": "entrance" },
+      { "fact": "room.facing_direction", "operator": "equals", "value": "East" }
+    ],
+    "consequence": {
+      "type": "favorable",
+      "severity": "very_high",
+      "message": "East-facing entrance enhances vitality, recognition, and success.",
+      "short_message": "Excellent Vastu position"
+    },
+    "remedy": { "type": "none", "description": "No remedy needed." },
+    "compatibility": { "indian_vastu_score": 1, "feng_shui_score": 1 },
+    "source_reference": "Manasara, Mayamatam"
+  },
+  {
+    "rule_id": "IV_ENT_SW_035",
+    "name": "Entrance Facing Southwest (Severe Vastu Defect)",
+    "description": "The Southwest is ruled by the earth element and represents stability. An entrance here destabilizes energy, leading to financial and relationship troubles.",
+    "system": "Indian Vastu",
+    "category": "Room Placement",
+    "target_entity": "Room",
+    "target_type": "entrance",
+    "conditions": [
+      { "fact": "room.room_type", "operator": "equals", "value": "entrance" },
+      { "fact": "room.facing_direction", "operator": "equals", "value": "Southwest" }
+    ],
+    "consequence": {
+      "type": "defect",
+      "severity": "very_high",
+      "message": "Entrance in Southwest leads to chronic problems, losses, and instability.",
+      "short_message": "Neutralize with lead and pyramid"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Place a lead square near the entrance and install Vastu metal strips in the doorframe."
+    },
+    "compatibility": { "indian_vastu_score": 0.1, "feng_shui_score": 0.1 },
+    "source_reference": "Mayamatam, Vastu Vidya"
+  },
+  
+  {
+    "rule_id": "IV_DIR_SLEEP_HEAD_SOUTH_042",
+    "name": "Sleeping with Head Towards South (Favorable)",
+    "description": "Sleeping with the head towards South aligns the body’s magnetic field with the Earth’s, improving rest, immunity, and stability.",
+    "system": "Indian Vastu",
+    "category": "Directional Energy Flow",
+    "target_entity": "Object",
+    "target_type": "bed",
+    "conditions": [
+      { "fact": "object.object_type", "operator": "equals", "value": "bed" },
+      { "fact": "object.headboard_direction", "operator": "equals", "value": "South" }
+    ],
+    "consequence": {
+      "type": "favorable",
+      "severity": "high",
+      "message": "Sleeping with head to South promotes deep sleep and long-term health.",
+      "short_message": "Best sleep direction"
+    },
+    "remedy": { "type": "none", "description": "No remedy needed." },
+    "compatibility": { "indian_vastu_score": 1, "feng_shui_score": 1 },
+    "source_reference": "Samarangana Sutradhara, Mayamatam"
+  },
+  {
+    "rule_id": "IV_DIR_COOK_EAST_045",
+    "name": "Cooking While Facing East (Favorable)",
+    "description": "Cooking while facing East aligns with the fire element’s direction, enhancing digestion and health benefits.",
+    "system": "Indian Vastu",
+    "category": "Directional Energy Flow",
+    "target_entity": "Object",
+    "target_type": "stove",
+    "conditions": [
+      { "fact": "object.object_type", "operator": "equals", "value": "stove" },
       { "fact": "object.facing_direction", "operator": "equals", "value": "East" }
     ],
-    "consequence": { "type": "favorable", "severity": "medium", "message": "...", "short_message": "..." },
-    "remedy": { "type": "none", "description": "..." },
-    "compatibility": { "indian_vastu_score": 1, "feng_shui_score": 0 },
-    "source_reference": "Vastu principles for kitchen"
+    "consequence": {
+      "type": "favorable",
+      "severity": "high",
+      "message": "Cooking facing East promotes positive energy in food and family well-being.",
+      "short_message": "Perfect kitchen practice"
+    },
+    "remedy": { "type": "none", "description": "No remedy needed." },
+    "compatibility": { "indian_vastu_score": 1, "feng_shui_score": 0.9 },
+    "source_reference": "Mayamatam, Vastu Vidya"
+  },
+  {
+    "rule_id": "IV_ELM_WATER_NE_052",
+    "name": "Water Source in Northeast (Highly Favorable)",
+    "description": "The Northeast is ideal for wells, water tanks, and underground water sources, enhancing clarity, intuition, and prosperity.",
+    "system": "Indian Vastu",
+    "category": "Elemental Feature",
+    "target_entity": "Element",
+    "target_type": "water_source",
+    "conditions": [
+      { "fact": "element.type", "operator": "equals", "value": "water_source" },
+      { "fact": "element.placement_direction", "operator": "equals", "value": "Northeast" }
+    ],
+    "consequence": {
+      "type": "favorable",
+      "severity": "very_high",
+      "message": "Northeast water brings blessings, clarity, and wealth.",
+      "short_message": "Most auspicious water placement"
+    },
+    "remedy": { "type": "none", "description": "No remedy needed." },
+    "compatibility": { "indian_vastu_score": 1, "feng_shui_score": 1 },
+    "source_reference": "Mayamatam, Agni Purana"
+  },
+  {
+    "rule_id": "IV_ELM_TREE_NE_055",
+    "name": "Large Tree in Northeast (Vastu Defect)",
+    "description": "Heavy trees in the Northeast block spiritual and positive energy inflow, leading to confusion and loss of clarity.",
+    "system": "Indian Vastu",
+    "category": "Elemental Feature",
+    "target_entity": "Element",
+    "target_type": "tree",
+    "conditions": [
+      { "fact": "element.type", "operator": "equals", "value": "tree" },
+      { "fact": "element.placement_direction", "operator": "equals", "value": "Northeast" }
+    ],
+    "consequence": {
+      "type": "defect",
+      "severity": "high",
+      "message": "Trees in Northeast block divine energy, causing mental instability.",
+      "short_message": "Remove or trim immediately"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Trim/remove tree, place a white stone or quartz in the Northeast."
+    },
+    "compatibility": { "indian_vastu_score": 0.2, "feng_shui_score": 0.3 },
+    "source_reference": "Agni Purana"
+  },
+  
+  {
+    "rule_id": "IV_BST_CENTRAL_EMPTY_062",
+    "name": "Central Zone (Brahmasthan) Must Be Open",
+    "description": "The Brahmasthan (central zone) of a house must remain free of walls, toilets, beams, or heavy furniture to allow energy circulation.",
+    "system": "Indian Vastu",
+    "category": "Brahmasthan",
+    "target_entity": "Zone",
+    "target_type": "brahmasthan",
+    "conditions": [
+      { "fact": "zone.name", "operator": "equals", "value": "Brahmasthan" },
+      { "fact": "zone.is_obstructed", "operator": "equals", "value": true }
+    ],
+    "consequence": {
+      "type": "defect",
+      "severity": "very_high",
+      "message": "Obstruction in Brahmasthan restricts prana flow and harmony.",
+      "short_message": "Keep center open and clean"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Remove clutter; place a Vastu pyramid or install a skylight to energize."
+    },
+    "compatibility": { "indian_vastu_score": 0.1, "feng_shui_score": 0.2 },
+    "source_reference": "Mayamatam"
+  },
+  {
+    "rule_id": "IV_STR_NE_PROHIBITED_066",
+    "name": "No Staircase in Northeast",
+    "description": "The Northeast must remain light and open. A staircase here blocks upward spiritual and mental growth.",
+    "system": "Indian Vastu",
+    "category": "Staircase",
+    "target_entity": "Object",
+    "target_type": "staircase",
+    "conditions": [
+      { "fact": "object.object_type", "operator": "equals", "value": "staircase" },
+      { "fact": "object.placement_direction", "operator": "equals", "value": "Northeast" }
+    ],
+    "consequence": {
+      "type": "defect",
+      "severity": "high",
+      "message": "Staircase in NE causes mental blocks, legal issues, and confusion.",
+      "short_message": "Avoid load in this zone"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Use Vastu crystals and white lighting; keep the zone clutter-free."
+    },
+    "compatibility": { "indian_vastu_score": 0.2, "feng_shui_score": 0.2 },
+    "source_reference": "Vastu Vidya"
+  },
+  {
+    "rule_id": "IV_WTANK_OVERHEAD_SW_069",
+    "name": "Overhead Water Tank in Southwest (Favorable)",
+    "description": "Southwest is the best zone for heavy overhead tanks, ensuring energy stability and balance.",
+    "system": "Indian Vastu",
+    "category": "Water Tank",
+    "target_entity": "Element",
+    "target_type": "overhead_tank",
+    "conditions": [
+      { "fact": "element.type", "operator": "equals", "value": "overhead_tank" },
+      { "fact": "element.placement_direction", "operator": "equals", "value": "Southwest" }
+    ],
+    "consequence": {
+      "type": "favorable",
+      "severity": "high",
+      "message": "Tank in SW balances fire and earth, promoting success.",
+      "short_message": "Best zone for overhead tanks"
+    },
+    "remedy": { "type": "none", "description": "No remedy needed." },
+    "compatibility": { "indian_vastu_score": 1, "feng_shui_score": 0.8 },
+    "source_reference": "Mayamatam"
+  },
+  {
+    "rule_id": "IV_GARAGE_NW_071",
+    "name": "Garage in Northwest (Favorable)",
+    "description": "Vehicles represent mobility; placing a garage in Northwest supports movement and timely opportunities.",
+    "system": "Indian Vastu",
+    "category": "Garage",
+    "target_entity": "Room",
+    "target_type": "garage",
+    "conditions": [
+      { "fact": "room.room_type", "operator": "equals", "value": "garage" },
+      { "fact": "room.room_center_direction", "operator": "equals", "value": "Northwest" }
+    ],
+    "consequence": {
+      "type": "favorable",
+      "severity": "medium",
+      "message": "NW garage ensures smooth transitions and journeys.",
+      "short_message": "Good for travel and vehicles"
+    },
+    "remedy": { "type": "none", "description": "No remedy needed." },
+    "compatibility": { "indian_vastu_score": 1, "feng_shui_score": 0.9 },
+    "source_reference": "Mayamatam"
   }
+ 
+
+ 
+
+
+
+
+
 ]

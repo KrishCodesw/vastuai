@@ -16,7 +16,7 @@
       { "fact": "room.room_center_direction", "operator": "equals", "value": "Northeast" },
       { "fact": "object.metadata.is_fire_element", "operator": "equals", "value": true }
     ],
-    "consequence": { "type": "warning", "severity": "medium", "message": "...", "short_message": "..." },
+    "consequence": { "type": "warning", "severity": "medium", "message": "...", "short_message": "ye raha mera qr" },
     "remedy": { "type": "general", "description": "..." },
     "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
     "source_reference": "Feng Shui Bagua and Five Elements"
