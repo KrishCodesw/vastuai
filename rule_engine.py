@@ -135,14 +135,29 @@ if __name__ == "__main__":
 
     vastu_rules, fengshui_rules = load_rules("IndianVastuRuleBase.json", "ChineseVastuRuleBase.json")
 
+    # test_input = {
+    #    "room.room_type": "entrance",
+    # "room.facing_direction": "Southwest",
+    # "object.object_type": "stove",
+    # "object.facing_direction": "North",  # irrelevant here
+    # "object.metadata.is_fire_element": True,
+    # "object_reflects_bed": False
+    # }
     test_input = {
-       "element.type": "water_source",
-    "element.placement_direction": "Northeast",
-    "room.room_type": "bathroom",
-    "room.room_center_direction": "North",
+    "room.room_type": "master_bedroom",
+    "room.room_center_direction": "Southwest",  
+    "room.facing_direction": "South",  # For symbolic entry rules
     "object.object_type": "mirror",
-    "object.wall_direction": "East"
-    }
+    "object.facing_direction": "East",  # Direction the mirror faces
+    "object.metadata.is_fire_element": True,
+    "object.metadata.symbol_type": "phoenix",
+    "object.metadata.placement_position": "front",  # for symbolic rules
+    "object.metadata.material": "metal",  # for wind chime rules
+    "object.metadata.side_of_house": "left",  # for dragon placement
+    "object_reflects_clutter": True,
+    "object_reflects_bed": True
+}
+
 
     result = apply_combined_rules(test_input, mode, vastu_rules, fengshui_rules)
     print_report(result, mode)

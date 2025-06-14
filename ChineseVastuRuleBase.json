@@ -1,43 +1,711 @@
-
-
 [
-
   {
     "rule_id": "FS_RM_FIRE_WATER_CONFLICT_001",
     "name": "Fire Element (Stove) in Water/Earth Sector (Conflict)",
-    "description": "...",
+    "description": "Placing a stove (fire element) in a water or earth sector like the Northeast disrupts the elemental balance, causing instability in family health and finances.",
     "system": "Chinese Feng Shui",
     "category": "Elemental Balance",
     "target_entity": "Object",
     "target_type": "stove",
     "conditions": [
-      { "fact": "room.room_type", "operator": "equals", "value": "kitchen" },
-      { "fact": "object.object_type", "operator": "equals", "value": "stove" },
-      { "fact": "room.room_center_direction", "operator": "equals", "value": "Northeast" },
-      { "fact": "object.metadata.is_fire_element", "operator": "equals", "value": true }
+      {
+        "fact": "room.room_type",
+        "operator": "equals",
+        "value": "kitchen"
+      },
+      {
+        "fact": "object.object_type",
+        "operator": "equals",
+        "value": "stove"
+      },
+      {
+        "fact": "room.room_center_direction",
+        "operator": "equals",
+        "value": "Northeast"
+      },
+      {
+        "fact": "object.metadata.is_fire_element",
+        "operator": "equals",
+        "value": true
+      }
     ],
-    "consequence": { "type": "warning", "severity": "medium", "message": "...", "short_message": "ye raha mera qr" },
-    "remedy": { "type": "general", "description": "..." },
-    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "consequence": {
+      "type": "warning",
+      "severity": "medium",
+      "message": "Stove placed in Earth/Water sector weakens elemental harmony.",
+      "short_message": "Stove location not ideal"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Reposition stove to Southeast or add wood element to balance."
+    },
+    "compatibility": {
+      "indian_vastu_score": 0,
+      "feng_shui_score": 1
+    },
     "source_reference": "Feng Shui Bagua and Five Elements"
   },
   {
     "rule_id": "FS_OBJ_MIRROR_FACING_BED_002",
     "name": "Mirror Facing Bed in Bedroom (Defect)",
-    "description": "...",
+    "description": "A mirror directly facing the bed disturbs sleep and invites third-party energy into relationships.",
     "system": "Chinese Feng Shui",
     "category": "Object Placement",
     "target_entity": "Object",
     "target_type": "mirror",
     "conditions": [
-      { "fact": "room.room_type", "operator": "equals", "value": "master_bedroom" },
-      { "fact": "object.object_type", "operator": "equals", "value": "mirror" },
-      { "fact": "object_reflects_bed", "operator": "equals", "value": true } 
+      {
+        "fact": "room.room_type",
+        "operator": "equals",
+        "value": "master_bedroom"
+      },
+      {
+        "fact": "object.object_type",
+        "operator": "equals",
+        "value": "mirror"
+      },
+      {
+        "fact": "object_reflects_bed",
+        "operator": "equals",
+        "value": true
+      }
     ],
-    "consequence": { "type": "defect", "severity": "high", "message": "...", "short_message": "..." },
-    "remedy": { "type": "general", "description": "..." },
-    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "consequence": {
+      "type": "defect",
+      "severity": "high",
+      "message": "Mirror facing bed may cause sleep issues and relationship disturbances.",
+      "short_message": "Mirror defect"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Move mirror away or cover it during sleep."
+    },
+    "compatibility": {
+      "indian_vastu_score": 0,
+      "feng_shui_score": 1
+    },
     "source_reference": "Feng Shui principles for bedroom"
+  },
+  {
+    "rule_id": "FS_OBJ_BED_ON_DOOR_AXIS_003",
+    "name": "Bed Aligned with Door (Poison Arrow)",
+    "description": "In Feng Shui, having the bed aligned directly with the bedroom door exposes one to a 'poison arrow' of energy, leading to vulnerability and health problems.",
+    "system": "Chinese Feng Shui",
+    "category": "Object Alignment",
+    "target_entity": "Object",
+    "target_type": "bed",
+    "conditions": [
+      {
+        "fact": "room.room_type",
+        "operator": "equals",
+        "value": "bedroom"
+      },
+      {
+        "fact": "object.object_type",
+        "operator": "equals",
+        "value": "bed"
+      },
+      {
+        "fact": "object.metadata.on_door_axis",
+        "operator": "equals",
+        "value": true
+      }
+    ],
+    "consequence": {
+      "type": "defect",
+      "severity": "high",
+      "message": "Bed aligned with door creates a direct energy strike, weakening protection.",
+      "short_message": "Poison arrow bed alignment"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Shift bed or use footboard/furniture to block direct energy flow."
+    },
+    "compatibility": {
+      "indian_vastu_score": 0,
+      "feng_shui_score": 1
+    },
+    "source_reference": "Feng Shui Bedroom Layout Guidelines"
+  },
+  {
+    "rule_id": "FS_OBJ_MIRROR_FRONT_DOOR_004",
+    "name": "Mirror Facing Main Door (Wealth Reflection)",
+    "description": "Placing a mirror directly opposite the main entrance reflects incoming Qi (energy) back out, potentially reflecting away opportunities and wealth.",
+    "system": "Chinese Feng Shui",
+    "category": "Entrance Placement",
+    "target_entity": "Object",
+    "target_type": "mirror",
+    "conditions": [
+      {
+        "fact": "room.room_type",
+        "operator": "equals",
+        "value": "entrance"
+      },
+      {
+        "fact": "object.object_type",
+        "operator": "equals",
+        "value": "mirror"
+      },
+      {
+        "fact": "object.metadata.faces_main_door",
+        "operator": "equals",
+        "value": true
+      }
+    ],
+    "consequence": {
+      "type": "warning",
+      "severity": "medium",
+      "message": "Mirror facing main door may push positive energy out of the house.",
+      "short_message": "Energy reflection"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Reposition mirror so it doesn\u2019t directly reflect the door."
+    },
+    "compatibility": {
+      "indian_vastu_score": 0,
+      "feng_shui_score": 1
+    },
+    "source_reference": "Feng Shui Entrance Qi Flow"
+  },
+  {
+    "rule_id": "FS_OBJ_PLANTS_IN_BATHROOM_005",
+    "name": "Plants in Bathroom (Positive Qi Absorption)",
+    "description": "Plants absorb positive Qi in bathrooms and may become stagnant or moldy, attracting negative energy.",
+    "system": "Chinese Feng Shui",
+    "category": "Object Placement",
+    "target_entity": "Object",
+    "target_type": "plant",
+    "conditions": [
+      {
+        "fact": "room.room_type",
+        "operator": "equals",
+        "value": "bathroom"
+      },
+      {
+        "fact": "object.object_type",
+        "operator": "equals",
+        "value": "plant"
+      }
+    ],
+    "consequence": {
+      "type": "warning",
+      "severity": "low",
+      "message": "Plants in bathrooms may trap and weaken energy, leading to stagnation.",
+      "short_message": "Unfavorable plant location"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Use artificial plants or avoid greenery in bathrooms."
+    },
+    "compatibility": {
+      "indian_vastu_score": 0,
+      "feng_shui_score": 1
+    },
+    "source_reference": "Feng Shui for Bathroom Energy"
+  },
+  {
+    "rule_id": "FS_OBJ_WATER_FEATURE_INSIDE_BEDROOM_006",
+    "name": "Water Feature in Bedroom (Emotional Disturbance)",
+    "description": "Water features such as fountains or aquariums in bedrooms disrupt Yin energy and may cause emotional instability and relationship strain.",
+    "system": "Chinese Feng Shui",
+    "category": "Object Placement",
+    "target_entity": "Object",
+    "target_type": "water_feature",
+    "conditions": [
+      { "fact": "room.room_type", "operator": "equals", "value": "bedroom" },
+      { "fact": "object.object_type", "operator": "equals", "value": "water_feature" }
+    ],
+    "consequence": {
+      "type": "warning",
+      "severity": "medium",
+      "message": "Water features in bedroom cause excessive Yin energy and disrupt harmony.",
+      "short_message": "Avoid water in bedroom"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Remove the water feature or relocate it to a living or entrance area."
+    },
+    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "source_reference": "Feng Shui Bedroom Water Rules"
+  },
+  {
+    "rule_id": "FS_OBJ_SHARP_OBJECTS_POINTING_AT_SEATING_007",
+    "name": "Sharp Objects Pointing at Seating (Sha Chi)",
+    "description": "Exposed corners of walls or furniture (poison arrows) pointing at seating areas generate Sha Chi (negative energy).",
+    "system": "Chinese Feng Shui",
+    "category": "Energy Flow",
+    "target_entity": "Object",
+    "target_type": "sharp_object",
+    "conditions": [
+      { "fact": "object.metadata.points_at_seating", "operator": "equals", "value": true }
+    ],
+    "consequence": {
+      "type": "defect",
+      "severity": "medium",
+      "message": "Sharp angles cause harmful energy toward occupants.",
+      "short_message": "Poison arrow from sharp edge"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Reposition furniture or use plants/cloth to soften sharp edges."
+    },
+    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "source_reference": "Feng Shui Sha Chi Principles"
+  },
+  {
+    "rule_id": "FS_OBJ_CLOCK_ABOVE_BED_008",
+    "name": "Clock Above Bed (Mental Pressure)",
+    "description": "Having a clock hanging above the bed symbolizes time pressure and stress, affecting rest and health.",
+    "system": "Chinese Feng Shui",
+    "category": "Object Placement",
+    "target_entity": "Object",
+    "target_type": "clock",
+    "conditions": [
+      { "fact": "room.room_type", "operator": "equals", "value": "bedroom" },
+      { "fact": "object.object_type", "operator": "equals", "value": "clock" },
+      { "fact": "object.metadata.above_bed", "operator": "equals", "value": true }
+    ],
+    "consequence": {
+      "type": "warning",
+      "severity": "low",
+      "message": "Clock above bed induces mental burden and energy imbalance.",
+      "short_message": "Clock above bed is bad"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Relocate the clock to a side wall or outside the bedroom."
+    },
+    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "source_reference": "Feng Shui for Restful Sleep"
+  },
+  {
+    "rule_id": "FS_OBJ_WINDCHIME_NEAR_TOILET_009",
+    "name": "Wind Chimes Near Toilet (Energy Dissipation)",
+    "description": "Placing wind chimes near toilets causes loss of beneficial Qi, as chimes are meant to activate energy, not disperse it near drains.",
+    "system": "Chinese Feng Shui",
+    "category": "Object Placement",
+    "target_entity": "Object",
+    "target_type": "wind_chime",
+    "conditions": [
+      { "fact": "room.room_type", "operator": "equals", "value": "toilet" },
+      { "fact": "object.object_type", "operator": "equals", "value": "wind_chime" }
+    ],
+    "consequence": {
+      "type": "warning",
+      "severity": "low",
+      "message": "Wind chime at toilet may activate draining Qi, causing loss of health and wealth.",
+      "short_message": "Avoid chime near toilet"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Relocate chime to main entrance or window facing good direction."
+    },
+    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "source_reference": "Feng Shui Use of Wind Chimes"
+  },
+  {
+    "rule_id": "FS_OBJ_BROKEN_ITEM_ANYWHERE_010",
+    "name": "Broken Objects Retained Indoors (Qi Blockage)",
+    "description": "Keeping broken or damaged items within the home blocks Qi flow and accumulates stagnant energy, affecting progress and relationships.",
+    "system": "Chinese Feng Shui",
+    "category": "Clutter & Decay",
+    "target_entity": "Object",
+    "target_type": "broken_object",
+    "conditions": [
+      { "fact": "object.metadata.is_broken", "operator": "equals", "value": true },
+      { "fact": "object.metadata.in_use", "operator": "equals", "value": false }
+    ],
+    "consequence": {
+      "type": "warning",
+      "severity": "medium",
+      "message": "Broken items store decaying energy and hinder life flow.",
+      "short_message": "Remove broken items"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Dispose of or repair the item to restore energy flow."
+    },
+    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "source_reference": "Feng Shui Clutter Rules"
+  },
+  {
+    "rule_id": "FS_OBJ_RED_COLOR_IN_NORTH_011",
+    "name": "Red Color in North Sector (Element Clash)",
+    "description": "The North represents the water element. Using red (fire) in this area causes elemental conflict and may harm career prospects.",
+    "system": "Chinese Feng Shui",
+    "category": "Color & Direction",
+    "target_entity": "Object",
+    "target_type": "color_scheme",
+    "conditions": [
+      { "fact": "room.room_center_direction", "operator": "equals", "value": "North" },
+      { "fact": "object.metadata.dominant_color", "operator": "equals", "value": "red" }
+    ],
+    "consequence": {
+      "type": "warning",
+      "severity": "medium",
+      "message": "Fire element in North disrupts career Qi flow.",
+      "short_message": "Avoid red in North"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Replace red with black, blue, or gray tones to support water energy."
+    },
+    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "source_reference": "Feng Shui Bagua Color Mapping"
+  },
+  {
+    "rule_id": "FS_OBJ_BED_UNDER_BEAM_012",
+    "name": "Bed Under Ceiling Beam (Energy Pressure)",
+    "description": "Sleeping directly under a beam causes energetic pressure, which may result in disturbed sleep, migraines, or relationship stress.",
+    "system": "Chinese Feng Shui",
+    "category": "Ceiling & Structure",
+    "target_entity": "Object",
+    "target_type": "bed",
+    "conditions": [
+      { "fact": "object.metadata.under_ceiling_beam", "operator": "equals", "value": true },
+      { "fact": "room.room_type", "operator": "equals", "value": "bedroom" }
+    ],
+    "consequence": {
+      "type": "defect",
+      "severity": "medium",
+      "message": "Ceiling beam over bed suppresses personal Qi, affecting health and emotions.",
+      "short_message": "Avoid beam above bed"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Reposition the bed or cover beam with fabric canopy to diffuse energy."
+    },
+    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "source_reference": "Feng Shui Structural Rules"
+  },
+  {
+    "rule_id": "FS_OBJ_BROKEN_MIRROR_013",
+    "name": "Broken Mirror in Home (Bad Fortune)",
+    "description": "A broken mirror symbolizes fractured energy and may attract misfortune and illness.",
+    "system": "Chinese Feng Shui",
+    "category": "Symbolism",
+    "target_entity": "Object",
+    "target_type": "mirror",
+    "conditions": [
+      { "fact": "object.object_type", "operator": "equals", "value": "mirror" },
+      { "fact": "object.metadata.is_broken", "operator": "equals", "value": true }
+    ],
+    "consequence": {
+      "type": "defect",
+      "severity": "high",
+      "message": "Broken mirrors amplify negative Qi and reflect distorted reality.",
+      "short_message": "Dispose broken mirror"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Safely discard broken mirrors and cleanse the space with salt water."
+    },
+    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "source_reference": "Feng Shui Symbolic Objects"
+  },
+  {
+    "rule_id": "FS_OBJ_FRONT_DOOR_ALIGNED_BACK_DOOR_014",
+    "name": "Front Door Aligned with Back Door (Wealth Loss)",
+    "description": "When front and back doors are directly aligned, Qi flows out too quickly, causing opportunities and wealth to escape.",
+    "system": "Chinese Feng Shui",
+    "category": "Architectural Flow",
+    "target_entity": "Room",
+    "target_type": "entrance_exit",
+    "conditions": [
+      { "fact": "room.metadata.front_back_door_alignment", "operator": "equals", "value": true }
+    ],
+    "consequence": {
+      "type": "defect",
+      "severity": "high",
+      "message": "Direct line between front and back doors drains good energy rapidly.",
+      "short_message": "Wealth drain door alignment"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Use a partition, curtain, or plant to slow down energy flow."
+    },
+    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "source_reference": "Feng Shui Energy Retention"
+  },
+  {
+    "rule_id": "FS_OBJ_OVERSIZED_FURNITURE_IN_SMALL_ROOM_015",
+    "name": "Oversized Furniture in Small Room (Blocked Qi)",
+    "description": "Large furniture in compact spaces creates Qi stagnation and emotional overwhelm.",
+    "system": "Chinese Feng Shui",
+    "category": "Space Optimization",
+    "target_entity": "Object",
+    "target_type": "furniture",
+    "conditions": [
+      { "fact": "object.metadata.size_ratio", "operator": "greater_than", "value": 0.5 }
+    ],
+    "consequence": {
+      "type": "warning",
+      "severity": "medium",
+      "message": "Oversized furniture blocks energy movement, leading to stuck feelings.",
+      "short_message": "Qi congestion due to furniture"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Use proportionate furniture and maintain clear walking paths."
+    },
+    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "source_reference": "Feng Shui for Small Spaces"
+  },
+
+  {
+    "rule_id": "FS_DIR_TOILET_IN_NW_016",
+    "name": "Toilet in Northwest (Weakens Metal Energy)",
+    "description": "In Feng Shui, the Northwest represents the Metal element and the patriarch. Having a toilet in this area introduces Water, which weakens Metal, and symbolically harms the male head of the household.",
+    "system": "Chinese Feng Shui",
+    "category": "Direction-Based Layout",
+    "target_entity": "Room",
+    "target_type": "toilet",
+    "conditions": [
+      { "fact": "room.room_type", "operator": "equals", "value": "toilet" },
+      { "fact": "room.room_center_direction", "operator": "equals", "value": "Northwest" }
+    ],
+    "consequence": {
+      "type": "defect",
+      "severity": "high",
+      "message": "Toilet in Northwest weakens Metal element and can harm authority figures.",
+      "short_message": "Avoid toilet in NW"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Use metal cures like six-rod wind chimes or metal coins in the toilet room."
+    },
+    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "source_reference": "Feng Shui Northwest Sector Rules"
+  },
+  {
+    "rule_id": "FS_OBJ_TURTLE_AT_BACK_017",
+    "name": "Turtle Symbol at Back Wall (Career Support)",
+    "description": "The turtle represents support and stability in Feng Shui. Placing it at the back of the house or room enhances career and protective energies.",
+    "system": "Chinese Feng Shui",
+    "category": "Symbolic Placement",
+    "target_entity": "Object",
+    "target_type": "symbol",
+    "conditions": [
+      { "fact": "object.metadata.symbol_type", "operator": "equals", "value": "turtle" },
+      { "fact": "object.metadata.placement_position", "operator": "equals", "value": "back_wall" }
+    ],
+    "consequence": {
+      "type": "positive",
+      "severity": "medium",
+      "message": "Turtle at the back provides career support and protection.",
+      "short_message": "Turtle gives support"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Place a black turtle figurine at the back wall of your living space or home."
+    },
+    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "source_reference": "Feng Shui Four Celestial Animals"
+  },
+  {
+    "rule_id": "FS_OBJ_FOUNTAIN_NEAR_ENTRY_018",
+    "name": "Water Fountain Near Entry (Attracts Wealth if Left Side)",
+    "description": "A flowing water fountain near the main entrance activates wealth energy if placed on the left side (inside view), but can harm relationships if on the right side.",
+    "system": "Chinese Feng Shui",
+    "category": "Water Element Activation",
+    "target_entity": "Object",
+    "target_type": "fountain",
+    "conditions": [
+      { "fact": "object.object_type", "operator": "equals", "value": "fountain" },
+      { "fact": "object.metadata.near_main_door", "operator": "equals", "value": true },
+      { "fact": "object.metadata.side_of_door", "operator": "equals", "value": "right" }
+    ],
+    "consequence": {
+      "type": "warning",
+      "severity": "medium",
+      "message": "Water feature on the right side (from inside) near entrance may disrupt relationships.",
+      "short_message": "Fountain on right = imbalance"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Shift the fountain to the left side (from inside view) of the door."
+    },
+    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "source_reference": "Feng Shui Water Activation Guidelines"
+  },
+  {
+    "rule_id": "FS_DIR_STAIRS_FACING_MAIN_DOOR_019",
+    "name": "Staircase Directly Facing Main Door (Energy Rushes Out)",
+    "description": "A staircase directly aligned with the main door allows energy to escape too quickly, leading to instability in finances and health.",
+    "system": "Chinese Feng Shui",
+    "category": "Architectural Alignment",
+    "target_entity": "Room",
+    "target_type": "entrance_exit",
+    "conditions": [
+      { "fact": "room.metadata.stairs_facing_main_door", "operator": "equals", "value": true }
+    ],
+    "consequence": {
+      "type": "defect",
+      "severity": "high",
+      "message": "Qi flows rapidly out the door, causing financial and energetic drain.",
+      "short_message": "Stairs align with door = bad"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Use a screen, plant, or curved rug to redirect energy away from stair-path."
+    },
+    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "source_reference": "Feng Shui Entryway Flow Rules"
   }
+
+,
+  {
+    "rule_id": "FS_OBJ_PAINTING_WATERFALL_ABOVE_SOFA_020",
+    "name": "Waterfall Painting Over Sofa (Emotional Disruption)",
+    "description": "Having a painting of a waterfall above a sofa may lead to emotional instability due to excess water energy over a sitting area.",
+    "system": "Chinese Feng Shui",
+    "category": "Object Placement",
+    "target_entity": "Object",
+    "target_type": "painting",
+    "conditions": [
+      { "fact": "object.metadata.subject", "operator": "equals", "value": "waterfall" },
+      { "fact": "object.metadata.placement_position", "operator": "equals", "value": "above_sofa" }
+    ],
+    "consequence": {
+      "type": "warning",
+      "severity": "medium",
+      "message": "Waterfall imagery over a resting space can lead to emotional turbulence.",
+      "short_message": "Avoid waterfall over sofa"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Place waterfall imagery in the north sector, or use landscape images over seating."
+    },
+    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "source_reference": "Feng Shui Interior Symbols Guide"
+  }
+, {
+    "rule_id": "FS_DIR_BED_IN_SOUTHWEST_021",
+    "name": "Bed in Southwest (Stability and Relationship Harmony)",
+    "description": "Southwest represents the Earth element and is ideal for the master bedroom. Placing the bed here enhances stability in relationships and anchors family energy.",
+    "system": "Chinese Feng Shui",
+    "category": "Room Placement",
+    "target_entity": "Room",
+    "target_type": "bedroom",
+    "conditions": [
+      { "fact": "room.room_type", "operator": "equals", "value": "master_bedroom" },
+      { "fact": "room.room_center_direction", "operator": "equals", "value": "Southwest" }
+    ],
+    "consequence": {
+      "type": "positive",
+      "severity": "high",
+      "message": "Southwest is the most stable and grounding position for a master bedroom.",
+      "short_message": "SW bed = harmony"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Place the bed in the Southwest zone and use earthy tones like beige or brown."
+    },
+    "compatibility": { "indian_vastu_score": 1, "feng_shui_score": 1 },
+    "source_reference": "Feng Shui Bagua Earth Sector"
+  },
+  {
+    "rule_id": "FS_OBJ_DRAGON_ON_LEFT_022",
+    "name": "Dragon Symbol on Left Side (Power and Support)",
+    "description": "The left side of the house (facing out) is considered the Green Dragon side. Placing a dragon symbol here enhances support and masculine energy.",
+    "system": "Chinese Feng Shui",
+    "category": "Symbolic Placement",
+    "target_entity": "Object",
+    "target_type": "symbol",
+    "conditions": [
+      { "fact": "object.metadata.symbol_type", "operator": "equals", "value": "dragon" },
+      { "fact": "object.metadata.side_of_house", "operator": "equals", "value": "left" }
+    ],
+    "consequence": {
+      "type": "positive",
+      "severity": "medium",
+      "message": "Dragon on the left brings support, growth, and male protection.",
+      "short_message": "Left dragon = support"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Place a dragon statue or art on the left side (Green Dragon) of your house."
+    },
+    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "source_reference": "Feng Shui Four Celestial Animals"
+  },
+  {
+    "rule_id": "FS_OBJ_PHOENIX_AT_FRONT_023",
+    "name": "Phoenix Symbol at Front (Opportunities and Fame)",
+    "description": "The front of the house symbolizes the Red Phoenix. Keeping this area open and having a phoenix image can bring new opportunities.",
+    "system": "Chinese Feng Shui",
+    "category": "Symbolic Placement",
+    "target_entity": "Object",
+    "target_type": "symbol",
+    "conditions": [
+      { "fact": "object.metadata.symbol_type", "operator": "equals", "value": "phoenix" },
+      { "fact": "object.metadata.placement_position", "operator": "equals", "value": "front" }
+    ],
+    "consequence": {
+      "type": "positive",
+      "severity": "medium",
+      "message": "Phoenix in front invites career progress and public recognition.",
+      "short_message": "Front phoenix = fame"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Keep front open and decorate with phoenix image or red-themed plants."
+    },
+    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "source_reference": "Feng Shui Four Celestial Animals"
+  },
+  {
+    "rule_id": "FS_OBJ_MIRROR_EXPANDS_CHAI_024",
+    "name": "Mirror Expands Wealth Chi (Must Not Reflect Clutter)",
+    "description": "Mirrors in Feng Shui can expand energy and wealth if placed correctly, but reflecting clutter doubles negative Qi.",
+    "system": "Chinese Feng Shui",
+    "category": "Object Placement",
+    "target_entity": "Object",
+    "target_type": "mirror",
+    "conditions": [
+      { "fact": "object.object_type", "operator": "equals", "value": "mirror" },
+      { "fact": "object_reflects_clutter", "operator": "equals", "value": true }
+    ],
+    "consequence": {
+      "type": "defect",
+      "severity": "medium",
+      "message": "Mirror reflecting clutter doubles the chaos and reduces prosperity.",
+      "short_message": "Mirror x clutter = bad chi"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Remove clutter in mirror view or reposition mirror to reflect greenery or wealth symbols."
+    },
+    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "source_reference": "Feng Shui Mirror Principles"
+  },
+  {
+    "rule_id": "FS_OBJ_WINDCHIMES_METAL_IN_WEST_025",
+    "name": "Metal Wind Chimes in West for Children Luck",
+    "description": "The West represents the Children and Creativity sector. Metal wind chimes here enhance blessings for offspring and artistic talent.",
+    "system": "Chinese Feng Shui",
+    "category": "Elemental Activation",
+    "target_entity": "Object",
+    "target_type": "wind_chime",
+    "conditions": [
+      { "fact": "object.object_type", "operator": "equals", "value": "wind_chime" },
+      { "fact": "object.metadata.material", "operator": "equals", "value": "metal" },
+      { "fact": "room.room_center_direction", "operator": "equals", "value": "West" }
+    ],
+    "consequence": {
+      "type": "positive",
+      "severity": "medium",
+      "message": "Metal wind chimes in West activate creativity and child-related luck.",
+      "short_message": "West chime = child luck"
+    },
+    "remedy": {
+      "type": "general",
+      "description": "Hang 6-rod metal wind chimes in the Western sector of your home."
+    },
+    "compatibility": { "indian_vastu_score": 0, "feng_shui_score": 1 },
+    "source_reference": "Feng Shui Bagua Children Sector"
+  }
+
 
 ]
