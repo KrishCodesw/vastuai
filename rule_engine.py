@@ -92,6 +92,15 @@ def print_report(result, mode):
     print(f"VASTU INTELLIGENCE REPORT".ljust(45) + f"Mode: {mode.upper()}")
     print("=" * 60)
     print(f"Overall Compatibility Score: {result['score']}/100\n")
+    
+    if test_input:
+        print("TEST INPUT SNAPSHOT")
+        print("-" * 60)
+        for key, value in test_input.items():
+            print(f"{key.ljust(30)}: {value}")
+        print()
+
+    
 
     if result['positives']:
         print("POSITIVE OBSERVATIONS")
@@ -144,18 +153,12 @@ if __name__ == "__main__":
     # "object_reflects_bed": False
     # }
     test_input = {
-    "room.room_type": "master_bedroom",
-    "room.room_center_direction": "Southwest",  
-    "room.facing_direction": "South",  # For symbolic entry rules
-    "object.object_type": "mirror",
-    "object.facing_direction": "East",  # Direction the mirror faces
+      "room.room_type": "kitchen",
+    "room.room_center_direction": "Southeast",
+    "object.object_type": "stove",
+    "object.facing_direction": "East",
     "object.metadata.is_fire_element": True,
-    "object.metadata.symbol_type": "phoenix",
-    "object.metadata.placement_position": "front",  # for symbolic rules
-    "object.metadata.material": "metal",  # for wind chime rules
-    "object.metadata.side_of_house": "left",  # for dragon placement
-    "object_reflects_clutter": True,
-    "object_reflects_bed": True
+    "object_reflects_bed": False
 }
 
 
