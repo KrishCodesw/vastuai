@@ -151,12 +151,13 @@ if __name__ == "__main__":
     # "object.facing_direction": "North",  # irrelevant here
     # "object.metadata.is_fire_element": True,
     # "object_reflects_bed": False
-    # }
+    # } 
+    # This is the test input which will come dynamically and fill in 
     test_input = {
       "room.room_type": "kitchen",
-    "room.room_center_direction": "Southeast",
+    "room.room_center_direction": "Northwest",
     "object.object_type": "stove",
-    "object.facing_direction": "East",
+    "object.facing_direction": "South",
     "object.metadata.is_fire_element": True,
     "object_reflects_bed": False
 }
