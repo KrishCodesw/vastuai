@@ -87,7 +87,7 @@ def apply_combined_rules(input_facts, rule_mode, vastu_rules, fengshui_rules):
         "negatives": negatives
     }
 
-def print_report(result, mode):
+def print_report(result, mode,test_input):
     print("=" * 60)
     print(f"VASTU INTELLIGENCE REPORT".ljust(45) + f"Mode: {mode.upper()}")
     print("=" * 60)
@@ -95,7 +95,7 @@ def print_report(result, mode):
     
     if test_input:
         print("TEST INPUT SNAPSHOT")
-        print("-" * 60)
+        # print("-" * 60)
         for key, value in test_input.items():
             print(f"{key.ljust(30)}: {value}")
         print()
@@ -104,7 +104,7 @@ def print_report(result, mode):
 
     if result['positives']:
         print("POSITIVE OBSERVATIONS")
-        print("-" * 60)
+        # print("-" * 60)
         for i, item in enumerate(result['positives'], 1):
             print(f"[{i}] {item['name']} — {item['system']} ({item['severity']})")
             print(f"    Tip         : {item['tip']}")
@@ -118,7 +118,7 @@ def print_report(result, mode):
 
     if result['negatives']:
         print("NEGATIVE FINDINGS")
-        print("-" * 60)
+        # print("-" * 60)
         for i, item in enumerate(result['negatives'], 1):
             print(f"[{i}] {item['name']} — {item['system']} ({item['severity']})")
             print(f"    Tip         : {item['tip']}")
@@ -164,4 +164,48 @@ if __name__ == "__main__":
 
 
     result = apply_combined_rules(test_input, mode, vastu_rules, fengshui_rules)
-    print_report(result, mode)
+    print_report(result, mode,test_input)
+
+
+def generate_report_string(result, mode, test_input):
+    output = []
+    output.append("=" * 60)
+    output.append(f"VASTU INTELLIGENCE REPORT".ljust(45) + f"Mode: {mode.upper()}")
+    output.append("=" * 60)
+    output.append(f"Overall Compatibility Score: {result['score']}/100\n")
+    
+    if test_input:
+        output.append("TEST INPUT SNAPSHOT")
+        # output.append("-" * 60)
+        for key, value in test_input.items():
+            output.append(f"{key.ljust(30)}: {value}")
+        output.append("")
+
+    if result['positives']:
+        output.append("POSITIVE OBSERVATIONS")
+        # output.append("-" * 60)
+        for i, item in enumerate(result['positives'], 1):
+            output.append(f"[{i}] {item['name']} — {item['system']} ({item['severity']})")
+            output.append(f"    Tip         : {item['tip']}")
+            output.append(f"    Description : {item['description']}")
+            output.append(f"    Consequence : {item['consequence']}")
+            output.append(f"    Remedy      : {item['remedy']}")
+            output.append(f"    Source      : {item['source']}\n")
+    else:
+        output.append("POSITIVE OBSERVATIONS\n    None found.\n")
+
+    if result['negatives']:
+        output.append("NEGATIVE FINDINGS")
+        # output.append("-" * 60)
+        for i, item in enumerate(result['negatives'], 1):
+            output.append(f"[{i}] {item['name']} — {item['system']} ({item['severity']})")
+            output.append(f"    Tip         : {item['tip']}")
+            output.append(f"    Description : {item['description']}")
+            output.append(f"    Consequence : {item['consequence']}")
+            output.append(f"    Remedy      : {item['remedy']}")
+            output.append(f"    Source      : {item['source']}\n")
+    else:
+        output.append("NEGATIVE FINDINGS\n    No defects or warnings detected.\n")
+
+    output.append("=" * 60)
+    return "\n".join(output)
